@@ -28,7 +28,7 @@ router.post("/", (req,res)=> {
             id: nanoid(idLength),
             ...req.body,
         };
-    req.app.db.get("indexComidas").push(indexBebida).write();
+    req.app.db.get("indexBebidas").push(indexBebida).write();
 
     res.send(indexBebida)
     } catch (error) {

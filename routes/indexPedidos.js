@@ -28,7 +28,7 @@ router.post("/", (req,res)=> {
             id: nanoid(idLength),
             ...req.body,
         };
-    req.app.db.get("indexPostres").push(indexPedido).write();
+    req.app.db.get("indexPedidos").push(indexPedido).write();
 
     res.send(indexPedido)
     } catch (error) {

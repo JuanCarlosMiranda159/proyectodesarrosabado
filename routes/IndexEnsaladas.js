@@ -13,7 +13,7 @@ router.get("/", (req, res)=> {
 
 //obtener articulos desde la ID
 router.get("/:id", (req, res) =>{
-    const indexExtra = req.app.disable.get("indexEnsaladas").find({ id: req.params.id }).value();
+    const indexEnsala = req.app.disable.get("indexEnsaladas").find({ id: req.params.id }).value();
 
     if(!indexEnsalada){
         res.sendStatus(404)
@@ -28,7 +28,7 @@ router.post("/", (req,res)=> {
             id: nanoid(idLength),
             ...req.body,
         };
-    req.app.db.get("indexExtras").push(indexEnsala).write();
+    req.app.db.get("indexEnsalas").push(indexEnsala).write();
 
     res.send(indexEnsalada)
     } catch (error) {

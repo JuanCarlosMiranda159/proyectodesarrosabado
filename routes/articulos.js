@@ -45,7 +45,7 @@ router.put("/:id", (req, res) =>{
             .assign(req.body)
             .write();
 
-        res.send(req.app.db.get("articuos").find({ id: req.params.id}));
+        res.send(req.app.db.get("articulos").find({ id: req.params.id}));
     } catch (error) {
         return res.status(500).send(error);
     }
